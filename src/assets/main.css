@@ -1,0 +1,121 @@
+@import './base.css';
+
+:root {
+  --primary: #ddb12c;
+  --secondText: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+#app {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+  display:flex;
+
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  max-width: 1100px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: center;
+
+  margin-top:2rem;
+}
+
+header {
+  background-color: var(--primary);
+  color: var(--secondText);
+  padding: 20px;
+  display:flex;
+  justify-content: center;
+}
+
+.header-container {
+  display:flex;
+  gap:20px;
+  justify-content: space-between;
+  width:100%;
+  max-width: 1000px;
+}
+
+header a {
+  color:var(--secondText);
+  text-decoration: none;
+  font-size: larger;
+  font-weight:550;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+
+
+.containerTareas{
+  display:flex;
+  gap:100px;
+}
+
+.tablaHeader{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 15px;
+}
+
+.itemTarea{
+  font-size: 1.2em;
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #ffff;
+}
+.tabla {
+  background-color: #f4f4f4;
+  padding: 0.5rem;
+  border-radius: 8px;
+  width:15rem;
+}
+.grupoTareas{
+  background-color: #f4f4f4;
+  display:flex;
+  flex-direction: column;
+  gap:3px;
+}
+
+.iconoClickable {
+  cursor: pointer;
+  padding-inline: 4px;
+}
+
+.iconoClickable:hover {
+  background-color: lightblue;
+}
+
+.inputTarea {
+  border: 0;
+  font-size: 1.2em;
+  background-color: #f4f4f4;
+  border-bottom:1px solid #eee;
+  width: 100%;
+}
+
+.inputTarea:focus {
+  outline: none;
+}
+
+.itemTareaShadow {
+  box-shadow:0 0 8px 4px lightblue;
+}
