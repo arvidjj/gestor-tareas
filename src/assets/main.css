@@ -119,3 +119,10 @@ header nav {
 .itemTareaShadow {
   box-shadow:0 0 8px 4px lightblue;
 }
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  justify-content: flex-start;
+}
