@@ -229,7 +229,13 @@ export default {
     },
 
     formatearFecha(fecha){
-      return fecha.split('T')[0].split('-').reverse().join('/');
+      console.log(fecha)
+      let newFecha = fecha;
+      if (typeof(fecha)==='Date') {
+        newFecha = newFecha.toLocaleDateString("en-US");
+      }
+      newFecha = newFecha.toString()
+      return newFecha.split('T')[0].split('-').reverse().join('/');
     }
 
   },
