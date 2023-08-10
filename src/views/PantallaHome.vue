@@ -12,7 +12,15 @@
         <template #item="{ element, index }">
           <div class="itemTarea">
             <div class="descripcionTarea" @click="abrirModalEditar(element, index)">
-              {{ element.nombre }}
+              <div class="tareaTitulo">
+                {{ element.nombre }}
+              </div>
+              <div class="tareaDescripcion" v-if="element.descripcion">
+                {{ element.descripcion }}
+              </div>
+              <div class="tareaDescripcion" v-if="element.fecha">
+                {{ formatearFecha(element.fecha) }}
+              </div>
             </div>
             <div>
               <Close @click="eliminarTarea(index, tablaPendiente, 'tablaPendiente')" class="iconoClickable" />
@@ -39,7 +47,15 @@
         <template #item="{ element, index }">
           <div class="itemTarea">
             <div class="descripcionTarea" @click="abrirModalEditar(element, index)">
-              {{ element.nombre }}
+              <div class="tareaTitulo">
+                {{ element.nombre }}
+              </div>
+              <div class="tareaDescripcion" v-if="element.descripcion">
+                {{ element.descripcion }}
+              </div>
+              <div class="tareaDescripcion" v-if="element.fecha">
+                {{ formatearFecha(element.fecha) }}
+              </div>
             </div>
             <div>
               <Close @click="eliminarTarea(index, tablaProgreso, 'tablaProgreso')" class="iconoClickable" />
@@ -66,7 +82,15 @@
         <template #item="{ element, index }">
           <div class="itemTarea">
             <div class="descripcionTarea" @click="abrirModalEditar(element, index)">
-              {{ element.nombre }}
+              <div class="tareaTitulo">
+                {{ element.nombre }}
+              </div>
+              <div class="tareaDescripcion" v-if="element.descripcion">
+                {{ element.descripcion }}
+              </div>
+              <div class="tareaDescripcion" v-if="element.fecha">
+                {{ formatearFecha(element.fecha) }}
+              </div>
             </div>
             <div>
               <Close @click="eliminarTarea(index, tablaHecho, 'tablaHecho')" class="iconoClickable" />
@@ -192,7 +216,7 @@ export default {
           const tareaAReemplazar = tabla[indice];
           //debe coincidir el nombre, si se tuviera id, utilizaria el id, pero se complicaria mas usando localstorage
           if (tareaAReemplazar !== undefined && tareaAReemplazar.nombre === this.tareaSeleccionada.nombre) {
-            
+
             //reemplazar tarea
             tabla.splice(indice, 1, tareaActualizada);
             this.mostrarModal = false;
@@ -203,6 +227,10 @@ export default {
         });
       }
     },
+
+    formatearFecha(fecha){
+      return fecha.split('T')[0].split('-').reverse().join('/');
+    }
 
   },
 

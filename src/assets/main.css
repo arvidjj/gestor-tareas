@@ -1,7 +1,7 @@
 @import './base.css';
 
 :root {
-  --primary: #ddb12c;
+  --primary: #5f22d9;
   --secondText: white;
 }
 
@@ -84,6 +84,7 @@ header nav {
 
   display:flex;
   justify-content: space-between;
+
 }
 .tabla {
   background-color: #f4f4f4;
@@ -96,6 +97,8 @@ header nav {
   display:flex;
   flex-direction: column;
   gap:3px;
+
+  min-height: 50px;
 }
 
 .iconoClickable {
@@ -113,6 +116,19 @@ header nav {
   background-color: #f4f4f4;
   border-bottom:1px solid #eee;
   width: 100%;
+  padding: 5px;
+}
+.inputTareaDescripcion {
+  border: 0;
+  font-size: 1.2em;
+  background-color: #f4f4f4;
+  border-bottom:1px solid #eee;
+  width: 300px;
+  padding: 5px;
+  
+  resize: none;
+  overflow: hidden;
+  max-height: fit-content;
 }
 
 .inputTarea:focus {
@@ -133,8 +149,17 @@ header nav {
 .modal {
   position:absolute;
   margin: auto;
-  bottom:50vh;
-  left:60vh
+  right:50vh;
+  animation:crecer 0.1s linear;
+}
+
+@keyframes crecer {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .modalContent {
@@ -150,4 +175,34 @@ header nav {
 .modalBotones{
   display:flex;
   justify-content: space-between;
+}
+
+.modalForm {
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+}
+
+.descripcionTarea {
+  display:flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+.tareaDescripcion {
+  font-size:small;
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--secondText);
+  padding: 8px;
+  font-weight: bold;
+  font-size: medium;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #713ed8;
 }
