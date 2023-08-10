@@ -65,7 +65,7 @@ header nav {
 
 .containerTareas{
   display:flex;
-  gap:100px;
+  gap:35px;
 }
 
 .tablaHeader{
@@ -90,7 +90,7 @@ header nav {
   background-color: #f4f4f4;
   padding: 0.5rem;
   border-radius: 8px;
-  width:15rem;
+  width:20rem;
 }
 .grupoTareas{
   background-color: #f4f4f4;

@@ -18,6 +18,9 @@
               <div class="tareaDescripcion" v-if="element.descripcion">
                 {{ element.descripcion }}
               </div>
+              <div class="tareaDescripcion" v-if="element.asignadoA">
+                Asignado a: {{ element.asignadoA }}
+              </div>
               <div class="tareaDescripcion" v-if="element.fecha">
                 {{ formatearFecha(element.fecha) }}
               </div>
@@ -53,6 +56,9 @@
               <div class="tareaDescripcion" v-if="element.descripcion">
                 {{ element.descripcion }}
               </div>
+              <div class="tareaDescripcion" v-if="element.asignadoA">
+                Asignado a: {{ element.asignadoA }}
+              </div>
               <div class="tareaDescripcion" v-if="element.fecha">
                 {{ formatearFecha(element.fecha) }}
               </div>
@@ -87,6 +93,9 @@
               </div>
               <div class="tareaDescripcion" v-if="element.descripcion">
                 {{ element.descripcion }}
+              </div>
+              <div class="tareaDescripcion" v-if="element.asignadoA">
+                Asignado a: {{ element.asignadoA }}
               </div>
               <div class="tareaDescripcion" v-if="element.fecha">
                 {{ formatearFecha(element.fecha) }}
@@ -228,14 +237,13 @@ export default {
       }
     },
 
-    formatearFecha(fecha){
-      console.log(fecha)
-      let newFecha = fecha;
-      if (typeof(fecha)==='Date') {
-        newFecha = newFecha.toLocaleDateString("en-US");
-      }
-      newFecha = newFecha.toString()
-      return newFecha.split('T')[0].split('-').reverse().join('/');
+    formatearFecha(fecha) {
+      const fechaObj = new Date(fecha.toString()); //se transforma la fecha a Date, para sacar formatear mas facil
+      const dia = fechaObj.getUTCDate();
+      const mes = fechaObj.getUTCMonth() + 1;
+      const anho = fechaObj.getUTCFullYear();
+
+      return `${dia}-${mes}-${anho}`;
     }
 
   },
