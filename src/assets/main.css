@@ -81,6 +81,9 @@ header nav {
   padding: 10px;
   border-radius: 8px;
   background-color: #ffff;
+
+  display:flex;
+  justify-content: space-between;
 }
 .tabla {
   background-color: #f4f4f4;
@@ -125,4 +128,26 @@ header nav {
   flex-direction: column;
   gap:20px;
   justify-content: flex-start;
+}
+
+.modal {
+  position:absolute;
+  margin: auto;
+  bottom:50vh;
+  left:60vh
+}
+
+.modalContent {
+  BORDER:1px solid lightgrey;
+  border-radius: 18px;
+  padding: 30px;
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+  background-color: white;
+}
+
+.modalBotones{
+  display:flex;
+  justify-content: space-between;
 }
