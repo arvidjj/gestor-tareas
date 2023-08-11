@@ -114,9 +114,10 @@
         <Check @click="agregarTarea(nombreTareaHecho, tablaHecho, 'tablaHecho')" class="iconoClickable" />
       </div>
     </div>
-    <EditarModal v-if="mostrarModal" :tareaSeleccionada="tareaSeleccionada" @actualizar-tarea="actualizarTarea"
-      @cerrar-modal="cerrarModal" />
+
   </div>
+  <EditarModal v-if="mostrarModal" :tareaSeleccionada="tareaSeleccionada" @actualizar-tarea="actualizarTarea"
+    @cerrar-modal="cerrarModal" />
 </template>
 
 <script>

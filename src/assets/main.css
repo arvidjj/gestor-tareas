@@ -83,7 +83,6 @@ header nav {
   background-color: #ffff;
 
   display:flex;
-  justify-content: space-between;
 
 }
 .tabla {
@@ -147,9 +146,8 @@ header nav {
 }
 
 .modal {
-  position:absolute;
-  margin: auto;
-  right:50vh;
+  position: absolute; 
+  top:10%;
   animation:crecer 0.1s linear;
 }
 
@@ -187,6 +185,13 @@ header nav {
   display:flex;
   flex-direction: column;
   gap:10px;
+  cursor: pointer;
+  padding-right:auto;
+  flex:1;
+}
+
+.descripcionTarea:hover {
+  background-color: lightblue;
 }
 
 .tareaDescripcion {
